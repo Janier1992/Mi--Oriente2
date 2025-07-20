@@ -1,9 +1,9 @@
 {
-  "name": "tienda-mioriente",
-  "homepage": "https://janier1992.github.io/Tienda-MiOriente",
-  "type": "module",
-  "version": "0.0.0",
+  "name": "mi-oriente-2",
   "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "homepage": "https://janier1992.github.io/Mi--Oriente2",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
