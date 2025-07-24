@@ -161,7 +161,7 @@ const addTransformIndexHtml = {
 				},
 				{
 					tag: 'script',
-					attrs: {type: 'module'},
+					attrs: { type: 'module' },
 					children: configHorizonsConsoleErrroHandler,
 					injectTo: 'head',
 				},
@@ -176,7 +176,7 @@ const addTransformIndexHtml = {
 	},
 };
 
-console.warn = () => {};
+console.warn = () => { };
 
 const logger = createLogger()
 const loggerError = logger.error
@@ -190,12 +190,16 @@ logger.error = (msg, options) => {
 }
 
 export default defineConfig({
+	base: '/Mi--Oriente2/',
 	customLogger: logger,
+	// --- ¡AQUÍ ESTÁ LA CORRECCIÓN FINAL! ---
+	// Mantenemos el plugin 'react' siempre, y los plugins de Hostinger
+	// (incluido el que inyecta los scripts) solo se añaden si 'isDev' es true.
 	plugins: [
-		...(isDev ? [inlineEditPlugin(), editModeDevPlugin()] : []),
 		react(),
-		addTransformIndexHtml
+		...(isDev ? [inlineEditPlugin(), editModeDevPlugin(), addTransformIndexHtml] : []),
 	],
+	// ------------------------------------------
 	server: {
 		cors: true,
 		headers: {
@@ -204,7 +208,7 @@ export default defineConfig({
 		allowedHosts: true,
 	},
 	resolve: {
-		extensions: ['.jsx', '.js', '.tsx', '.ts', '.json', ],
+		extensions: ['.jsx', '.js', '.tsx', '.ts', '.json',],
 		alias: {
 			'@': path.resolve(__dirname, './src'),
 		},
