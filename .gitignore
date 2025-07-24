@@ -1,0 +1,15 @@
+# Dependencias
+/node_modules
+
+# Carpeta de construcción
+/dist
+
+# Archivo de variables de entorno
+.env
+
+# Logs y archivos de sistema
+.DS_Store
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.vscode/
